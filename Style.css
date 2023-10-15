@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: greenyellow;
+}
+
+.título {
+    display: flex;
+    justify-content: center;
+}
+
+.chart-container {
+    height: 44.5vh;
+    width: 100vw; 
+    background-color: yellow;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart_media-container {
+    height: 44.6vh;
+    width: 100vw;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
