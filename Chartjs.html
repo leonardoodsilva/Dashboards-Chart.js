@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+    <h1 class="título">Dashboards Chart.JS</h1>
+
+    <div class="chart-container">
+        <canvas id="myChartTempUmid"></canvas>
+    </div>
+
+    <div class="chart_media-container">
+        <canvas id="myChartMedia"></canvas>
+    </div>
+
+</body>
+
+<script>
+
+    // Gráfico Linha Temp / Umid
+    const labels_horas = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+    ]
+
+    const data = {
+        labels: labels_horas,
+        datasets: [{
+            label: 'Temperatura',
+            backgroundColor: 'rgb(255, 0, 0)',
+            borderColor: 'rgb(255, 0, 0)',
+            data: [30, 29, 28, 25, 21, 23],
+        },
+        {
+            label: 'Umidade',
+            backgroundColor: 'rgb(0, 0, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [80, 81, 80, 85, 85, 82]
+        },
+
+
+        ]
+    };
+
+    const configTempUmid = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+
+</script>
+
+<script>
+
+    // Gráfico Barra Temp / Umid (Média)
+    const labels_meses = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+    ]
+    
+
+    const datamedia = {
+        labels: labels_meses,
+        datasets: [{
+            label: 'Temperatura Média',
+            backgroundColor: 'rgb(255, 0, 0)',
+            borderColor: 'rgb(255, 0, 0)',
+            data: [21, 23, 27, 22, 20, 19],
+        },
+        {
+            label: 'Umidade Média',
+            backgroundColor: 'rgb(0, 0, 255)',
+            borderColor: 'rgb(0, 0, 255)',
+            data: [90, 89, 92, 88, 89, 81]
+        },
+
+
+        ]
+    }
+
+    const configTempUmidMedia = {
+        type: 'bar',
+        data: datamedia,
+        options: {}
+    };
+
+</script>
+
+
+<script>
+
+    const myChartTempUmid = new Chart(
+        document.getElementById('myChartTempUmid'),
+        configTempUmid
+    );
+
+    const myChartMedia = new Chart(
+        document.getElementById('myChartMedia'),
+        configTempUmidMedia
+    );
+
+</script>
+
+</html>
